@@ -57,6 +57,24 @@ const listDokterTht = [
     }
 ]
 
+const listDokterKecantikan = [
+    {
+        nama: 'dr. Dustin',
+        imgUrl: './img-kecantikan/3.jpg',
+        description: 'Dokter untuk anda'
+    },
+    {
+        nama: 'dr. Tretan',
+        imgUrl: "./img-kecantikan/2.jpg",
+        description: 'Ketua Majelis dokter kecantikan'
+    },
+    {
+        nama: 'dr. WakWau',
+        imgUrl: './img-kecantikan/1.jpg',
+        description: 'Wakwauuuuuu'
+    }
+]
+
 const descriptionBox = document.getElementById('description-box');
 const formDoctorName = document.getElementById('form-dokter-name');
 const btnSave = document.getElementById('save');
@@ -182,6 +200,65 @@ function createListDoctorTht(imageUrl, name, description) {
     list.appendChild(card);
 }
 
+function createListDoctorKecantikan(imageUrl, name, description) {
+    const card = document.createElement('div');
+    card.className = "card mb-3";
+    card.style = "max-width:70%";
+
+    const row = document.createElement('div');
+    row.className = "row g-0";
+
+    card.appendChild(row);
+
+    const firstCol = document.createElement('div');
+    firstCol.className = "col-md-4";
+
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    img.className = "img-fluid rounded-start"
+
+    firstCol.appendChild(img);
+
+    const secCol = document.createElement('div');
+    secCol.className = "col-md-8";
+
+    const cardBody = document.createElement('div');
+    cardBody.className = "card-body";
+
+    const doctorName = document.createElement('h5');
+    doctorName.className = "card-title";
+    doctorName.innerText = name;
+
+    const doctorDesc = document.createElement('p');
+    doctorDesc.className = "card-text"
+    doctorDesc.innerText = description;
+
+    const btnDetail = document.createElement('button');
+    btnDetail.className = "btn btn-outline-primary";
+    btnDetail.innerText = "Detail"
+
+    btnDetail.onclick = function () {
+        descriptionBox.hidden = false;
+        formDoctorName.value = name;
+        fillDoctorDetail(imageUrl, name, description);
+
+    }
+
+    cardBody.appendChild(doctorName);
+    cardBody.appendChild(doctorDesc);
+    cardBody.appendChild(btnDetail);
+
+    secCol.appendChild(cardBody);
+
+    row.appendChild(firstCol);
+    row.appendChild(secCol);
+
+    card.appendChild(row);
+
+    const list = document.getElementById('nav-kecantikan');
+    list.appendChild(card);
+}
+
 function createListDoctorAnak(imageUrl, name, description) {
     const card = document.createElement('div');
     card.className = "card mb-3";
@@ -256,7 +333,7 @@ btnSave.onclick = function () {
     tableAppointment.hidden = false;
     fillForm();
     for (let i = 0; i < output.length; i++) {
-        const {nama, hari, sesi, usia, dokter} = output[i];
+        const { nama, hari, sesi, usia, dokter } = output[i];
         fillTable(nama, hari, sesi, usia, dokter, iterasi);
         iterasi++;
 
@@ -352,16 +429,21 @@ function resetForm() {
 }
 
 for (let i = 0; i < listDokterUmum.length; i++) {
-    const {nama, imgUrl, description} = listDokterUmum[i];
+    const { nama, imgUrl, description } = listDokterUmum[i];
     createListDoctor(imgUrl, nama, description);
 }
 
 for (let i = 0; i < listDokterAnak.length; i++) {
-    const {nama, imgUrl, description} = listDokterAnak[i];
+    const { nama, imgUrl, description } = listDokterAnak[i];
     createListDoctorAnak(imgUrl, nama, description)
 }
 
 for (let i = 0; i < listDokterTht.length; i++) {
-    const {nama, imgUrl, description} = listDokterTht[i];
+    const { nama, imgUrl, description } = listDokterTht[i];
     createListDoctorTht(imgUrl, nama, description)
+}
+
+for (let i = 0; i < listDokterKecantikan.length; i++) {
+    const { nama, imgUrl, description } = listDokterKecantikan[i];
+    createListDoctorKecantikan(imgUrl, nama, description)
 }
