@@ -25,7 +25,7 @@ const listDokterAnak = [
     {
         nama: 'dr. Iva',
         imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Jisoo_in_2022.jpg',
-        description: 'Dokter tercantik di rumah sakit, kesayangan buddy ivan'
+        description: 'Dokter tercantik di rumah sakit'
     },
     {
         nama: 'dr. Juned',
@@ -36,6 +36,24 @@ const listDokterAnak = [
         nama: 'dr. Pelangi',
         imgUrl: 'https://thumb.viva.co.id/media/frontend/thumbs3/2021/05/05/6091df2c9c45c-chelsea-islan_665_374.jpg',
         description: 'Dokter termanis di rumah sakit'
+    }
+]
+
+const listDokterTht = [
+    {
+        nama: 'dr. Benny',
+        imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8IaL1jhRq7UlHAdZe2LtJRF8bjOpqcFjVMA&usqp=CAU',
+        description: 'Dokter THT pengalaman 5 Tahun'
+    },
+    {
+        nama: 'dr. Bonny',
+        imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYDJkdL8b9n2uf-B4fmiOuxKS4CaYhfH7cNA&usqp=CAU',
+        description: 'Dokter THT pengalaman 3 Tahun'
+    },
+    {
+        nama: 'dr. Bunny',
+        imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8IaL1jhRq7UlHAdZe2LtJRF8bjOpqcFjVMA&usqp=CAU',
+        description: 'Dokter THT Freshgrad'
     }
 ]
 
@@ -102,6 +120,65 @@ function createListDoctor(imageUrl, name, description) {
     card.appendChild(row);
 
     const list = document.getElementById('nav-umum');
+    list.appendChild(card);
+}
+
+function createListDoctorTht(imageUrl, name, description) {
+    const card = document.createElement('div');
+    card.className = "card mb-3";
+    card.style = "max-width:70%";
+
+    const row = document.createElement('div');
+    row.className = "row g-0";
+
+    card.appendChild(row);
+
+    const firstCol = document.createElement('div');
+    firstCol.className = "col-md-4";
+
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    img.className = "img-fluid rounded-start"
+
+    firstCol.appendChild(img);
+
+    const secCol = document.createElement('div');
+    secCol.className = "col-md-8";
+
+    const cardBody = document.createElement('div');
+    cardBody.className = "card-body";
+
+    const doctorName = document.createElement('h5');
+    doctorName.className = "card-title";
+    doctorName.innerText = name;
+
+    const doctorDesc = document.createElement('p');
+    doctorDesc.className = "card-text"
+    doctorDesc.innerText = description;
+
+    const btnDetail = document.createElement('button');
+    btnDetail.className = "btn btn-outline-primary";
+    btnDetail.innerText = "Detail"
+
+    btnDetail.onclick = function () {
+        descriptionBox.hidden = false;
+        formDoctorName.value = name;
+        fillDoctorDetail(imageUrl, name, description);
+
+    }
+
+    cardBody.appendChild(doctorName);
+    cardBody.appendChild(doctorDesc);
+    cardBody.appendChild(btnDetail);
+
+    secCol.appendChild(cardBody);
+
+    row.appendChild(firstCol);
+    row.appendChild(secCol);
+
+    card.appendChild(row);
+
+    const list = document.getElementById('nav-tht');
     list.appendChild(card);
 }
 
@@ -284,3 +361,7 @@ for (let i = 0; i < listDokterAnak.length; i++) {
     createListDoctorAnak(imgUrl, nama, description)
 }
 
+for (let i = 0; i < listDokterTht.length; i++) {
+    const {nama, imgUrl, description} = listDokterTht[i];
+    createListDoctorTht(imgUrl, nama, description)
+}
