@@ -198,6 +198,11 @@ function renderTableData() {
 }
 
 btnSave.onclick = function () {
+    const alertInsertEL = document.getElementById('alert-insert-data');
+    alertInsertEL.hidden = false;
+    setTimeout(function () {
+        alertInsertEL.hidden = true;
+    }, 2500);
     tableAppointment.hidden = false;
     fillForm();
     renderTableData();
@@ -293,6 +298,11 @@ btnUpdate.onclick = function () {
     output[position].hari = hariEl;
     output[position].sesi = sesiEL;
     renderTableData();
+    const alertUpdateEl = document.getElementById('alert-update-data');
+    alertUpdateEl.hidden = false;
+    setTimeout(function () {
+        alertUpdateEl.hidden = true;
+    }, 2500);
 }
 
 function resetForm() {
