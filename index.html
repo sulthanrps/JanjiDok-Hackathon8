@@ -12,32 +12,41 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
     <style>
-        body{
+        body {
             font-family: 'Poppins', sans-serif;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-bold">JanjiDok</a>
-        </div>
-    
-        <div class="greeting-box">
-            <h1 class="greeting">Welcome to <span class="janjidoc">JanjiDok</span></h1>
-            <p class="janjidoc-desc">JanjiDok adalah sistem layanan antrian yang digunakan oleh rumah sakit JanjiDok. Sekarang kamu dapat menunggu antrian pemeriksaan tanpa harus berada di rumah sakit secara langsung !. Gunakan layanan kami dan tunggu giliran pemeriksaan dimanapun dan kapanpun</p>
-            <div class="ilustration">
-                <img src="book.png" alt="booking-illustration" class="book">
-            </div>
-        </div>
-    </nav>
-    
-    <div class="book-here">
-        <h2>Book your appointment here</h2>
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold">JanjiDok</a>
     </div>
+
+    <div class="greeting-box">
+        <h1 class="greeting">Welcome to <span class="janjidoc">JanjiDok</span></h1>
+        <p class="janjidoc-desc">JanjiDok adalah sistem layanan antrian yang digunakan oleh rumah sakit JanjiDok.
+            Sekarang kamu dapat menunggu antrian pemeriksaan tanpa harus berada di rumah sakit secara langsung !.
+            Gunakan layanan kami dan tunggu giliran pemeriksaan dimanapun dan kapanpun</p>
+        <div class="ilustration">
+            <img src="book.png" alt="booking-illustration" class="book">
+        </div>
+    </div>
+</nav>
+
+<div class="book-here">
+    <h2>Book your appointment here</h2>
+</div>
 
 
 <div class="container-fluid mt-4">
+    <div class="alert p-2 ml-6 mr-6 alert-primary text-center" role="alert" id="alert-insert-data" hidden>
+        Berhasil membuat janji! Mohon Datang Tepat Waktu!
+    </div>
+    <div class="alert alert-success" role="alert" id="alert-update-data" hidden>
+        Jadwal berhasil diubah! Mohon Datang Tepat Waktu!
+    </div>
+
     <table class="table" id="table-appointment" hidden>
         <thead>
         <tr>
@@ -55,7 +64,7 @@
     </table>
 
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-8">
             <div class="card p-4">
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -92,7 +101,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3" id="form-update" hidden>
+        <div class="col-md-4" id="form-update" hidden>
             <div class="card" style="width: 22rem;">
                 <div class="p-4">
                     <div class="mb-3" hidden>
@@ -136,7 +145,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3" id="description-box" hidden>
+        <div class="col-md-4" id="description-box" hidden>
             <div class="card" style="width: 22rem;">
                 <img src=""
                      class="card-img-top" alt="" id="img-detail-dokter">
@@ -197,9 +206,11 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close
+                                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                        Close
                                     </button>
-                                    <button type="button" class="btn btn-outline-primary" id="save" data-bs-dismiss="modal">Save
+                                    <button type="button" class="btn btn-outline-primary" id="save"
+                                            data-bs-dismiss="modal">Save
                                         changes
                                     </button>
                                 </div>
