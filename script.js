@@ -111,7 +111,7 @@ function createList(imageUrl, name, description) {
     cardBody.className = "card-body";
 
     const doctorName = document.createElement('h5');
-    doctorName.className = "card-title";
+    doctorName.className = "card-title fw-bold";
     doctorName.innerText = name;
 
     const doctorDesc = document.createElement('p');
@@ -120,7 +120,7 @@ function createList(imageUrl, name, description) {
 
     const btnDetail = document.createElement('button');
     btnDetail.className = "btn btn-outline-primary";
-    btnDetail.innerText = "Detail"
+    btnDetail.innerText = "Pilih Dokter"
 
     btnDetail.onclick = function () {
         descriptionBox.hidden = false;
