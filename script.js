@@ -2,22 +2,22 @@ const listDokterUmum = [
     {
         nama: "dr. Ucup",
         imgUrl: "https://pbs.twimg.com/profile_images/1510276954938920966/_jPqrcHD_400x400.jpg",
-        description: "lorem ipsum dolor sit amet",
+        description: "Halo, saya dr. Ucup siap membantu anda sampai sembuh",
     },
     {
         nama: "dr. Icip",
         imgUrl: "https://i.pinimg.com/736x/c6/de/4f/c6de4fbc92c32c25dd90c41884968d63--die-minions-minion-s.jpg",
-        description: "lorem ipsum dolor sit amet",
+        description: "Halo, saya dr. Icip siap membantu anda sampai sembuh",
     },
     {
         nama: "dr. Acap",
         imgUrl: "https://m.media-amazon.com/images/I/71-2AA1-HeL._AC_SL1500_.jpg",
-        description: "lorem ipsum dolor sit amet",
+        description: "Halo, saya dr. Acap siap membantu anda sampia sembuh",
     },
     {
         nama: "dr. Ecep",
         imgUrl: "https://m.media-amazon.com/images/I/71-2AA1-HeL._AC_SL1500_.jpg",
-        description: "lorem ipsum dolor sit amet",
+        description: "Halo, saya dr. Ecep siap membantu anda sampia sembuh",
     },
 ]
 
