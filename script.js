@@ -60,18 +60,23 @@ const listDokterTht = [
 const listDokterKecantikan = [
     {
         nama: 'dr. Dustin',
-        imgUrl: './img-kecantikan/3.jpg',
-        description: 'Dokter untuk anda'
+        imgUrl: "./img-kecantikan/3.jpg",
+        description: 'Halo, aku dustin siap menjadi partner konsultasi masalah kecantikan anda.'
     },
     {
         nama: 'dr. Tretan',
-        imgUrl: "./img-kecantikan/2.jpg",
-        description: 'Ketua Majelis dokter kecantikan'
+        imgUrl: './img-kecantikan/2.jpg',
+        description: 'Saya tidak menyarankan anda konsultasi dengan dokter diatas.'
     },
     {
-        nama: 'dr. WakWau',
-        imgUrl: './img-kecantikan/1.jpg',
-        description: 'Wakwauuuuuu'
+        nama: 'dr. Luna, Sp.KK',
+        imgUrl: './img-kecantikan/4.jpg',
+        description: 'Saya sudah berpengalaman di bidang ini lebih dari 20 Tahun.  Kamu dijamin jadi cantik, ayo konsultasi sama aku.'
+    },
+    {
+        nama: 'dr. Rigen',
+        imgUrl: './img-kecantikan/7.jpg',
+        description: 'Anda ada masalah kulit ? Ya itu masalah anda, bukan masalah saya.'
     }
 ]
 
@@ -144,28 +149,28 @@ function createList(imageUrl, name, description) {
 }
 
 function createListDoctorUmum(imageUrl, name, description) {
-    const card = createList(imageUrl,name, description)
+    const card = createList(imageUrl, name, description)
 
     const list = document.getElementById('nav-umum');
     list.appendChild(card);
 }
 
 function createListDoctorTht(imageUrl, name, description) {
-    const card = createList(imageUrl,name, description)
+    const card = createList(imageUrl, name, description)
 
     const list = document.getElementById('nav-tht');
     list.appendChild(card);
 }
 
 function createListDoctorKecantikan(imageUrl, name, description) {
-    const card = createList(imageUrl,name, description)
+    const card = createList(imageUrl, name, description)
 
     const list = document.getElementById('nav-kecantikan');
     list.appendChild(card);
 }
 
 function createListDoctorAnak(imageUrl, name, description) {
-    const card = createList(imageUrl,name, description)
+    const card = createList(imageUrl, name, description)
 
     const list = document.getElementById('nav-anak');
     list.appendChild(card);
@@ -187,7 +192,7 @@ function renderTableData() {
         tbody.innerHTML = '';
     }
     for (let i = 0; i < output.length; i++) {
-        const {idx, nama, hari, sesi, usia, dokter} = output[i];
+        const { idx, nama, hari, sesi, usia, dokter } = output[i];
         fillTable(idx, nama, hari, sesi, usia, dokter);
     }
 }
