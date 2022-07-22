@@ -282,11 +282,11 @@ function displayUpdateData(idx, nama, hari, sesi, usia, dokter) {
 }
 
 btnUpdate.onclick = function () {
-    const hari = document.getElementById('form-update-hari').value;
-    const sesi = document.getElementById('form-update-sesi').value;
+    const hariEl = document.getElementById('form-update-hari').value;
+    const sesiEL = document.getElementById('form-update-sesi').value;
     const position = document.getElementById('form-update-id').value;
-    output[position].hari = hari;
-    output[position].sesi = sesi;
+    output[position].hari = hariEl;
+    output[position].sesi = sesiEL;
     renderTableData();
 }
 
