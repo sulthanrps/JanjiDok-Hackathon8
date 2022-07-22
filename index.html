@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
     <style>
         body{
             font-family: 'Poppins', sans-serif;
@@ -17,11 +18,25 @@
     </style>
 </head>
 <body>
-<nav class="navbar navbar-dark bg-primary">
-    <div class="container-fluid">
-        <a class="navbar-brand fw-bold">JanjiDok</a>
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold">JanjiDok</a>
+        </div>
+    
+        <div class="greeting-box">
+            <h1 class="greeting">Welcome to <span class="janjidoc">JanjiDok</span></h1>
+            <p class="janjidoc-desc">JanjiDok adalah sistem layanan antrian yang digunakan oleh rumah sakit JanjiDok. Sekarang kamu dapat menunggu antrian pemeriksaan tanpa harus berada di rumah sakit secara langsung !. Gunakan layanan kami dan tunggu giliran pemeriksaan dimanapun dan kapanpun</p>
+            <div class="ilustration">
+                <img src="book.png" alt="booking-illustration" class="book">
+            </div>
+        </div>
+    </nav>
+    
+    <div class="book-here">
+        <h2>Book your appointment here</h2>
     </div>
-</nav>
+
+
 <div class="container-fluid mt-4">
     <table class="table" id="table-appointment" hidden>
         <thead>
